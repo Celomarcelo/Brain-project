@@ -40,3 +40,18 @@ var questions = [
         correct : 'The sentence is correct.',
     },
 ];
+var username;
+var currentQuestion = 0;
+var score = 0;
+function startGame() {
+    document.getElementById("result").classList.add('hide');
+    document.getElementById('restart').classList.add('hide');
+    username = document.getElementById("username").value;
+    if (username === ''){
+        username = '"Unknown"'
+    }
+    let reveal = document.querySelector('.hide');
+    let divStart = document.getElementById('first-div');
+    divStart.classList.add('hide');
+    reveal.classList.remove('hide');
+}
