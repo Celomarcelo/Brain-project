@@ -1,0 +1,19 @@
+body {
+    background-color: blueviolet;
+    font: normal 15pt arial;
+    text-align: center;
+    color: aliceblue;
+
+}
+header {
+
+}
+section{
+   color: black;
+   background: aliceblue;
+   border-radius: 10px;
+   padding: 20px;
+   width: 500px;
+   margin: auto;
+   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.411);
+}
