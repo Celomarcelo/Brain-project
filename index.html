@@ -7,7 +7,7 @@
     <meta name="keywords" content="brain, game, knowledge, test">
     <link rel="stylesheet" href="assets/css/index.css">
     <link rel="icon" href="assets/images/favicon.ico">
-    <title>Brain</title>
+    <title>Brain - Game</title>
 </head>
 <body>
     <!--header section-->
@@ -26,10 +26,10 @@
             <p>Hello, let's test your kwoledge?</p>
             <p>But first, enter what you want to be called</p>
             <input type="text" id="username" name="username">
-            <p>When you are ready, press <button id="start" value="submit" class="button-start">Start</button> to begin.</p>
+            <p>When you are ready, press <button id="start" value="submit" class="button-start" onclick="startGame()">Start</button> to begin.</p>
         </div>
         <!--questionnaire's part-->
-        <div id="second-div" class="">Question:
+        <div id="second-div" class="hide">Question:
             <hr>
         <span>Question</span>
             <hr>
@@ -39,18 +39,21 @@
         </p>
         <input type="button" value="submit" class="button">
         </div>
-        <div id="answer-place">
+        <!--answer's part-->
+        <div id="answer-place" class="hide">
             Correct Answer
         </div>
-        <div id="result">
+        <!--result and restart part -->
+        <div id="result" class="hide">
             Result
         </div>
-        <div id="restart">
+        <div id="restart" class="hide">
             <input type="button"  value="RESTART"  class="button">
         </div>
    
 
     </section>
+    <!--javascript-->
     <script src="index.js"></script>
     
 </body>
