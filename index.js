@@ -54,4 +54,9 @@ function startGame() {
     let divStart = document.getElementById('first-div');
     divStart.classList.add('hide');
     reveal.classList.remove('hide');
+    showQuestion()
+}
+function showQuestion() {
+    var questionElement = document.getElementById("display-question");
+    questionElement.innerHTML = questions[currentQuestion].question;
 }
