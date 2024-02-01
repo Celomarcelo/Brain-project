@@ -21,3 +21,8 @@ section{
    margin: auto;
    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.411);
 }
+.button-start {
+    background-color: rgb(67, 201, 211);
+    width: 80px;
+    border-radius: 10px;
+}
