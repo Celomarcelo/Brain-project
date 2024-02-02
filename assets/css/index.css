@@ -9,7 +9,15 @@ img {
     height: 100px;
     width: 100px;
 }
+#img{
+   padding: 0;
+}
+h1 {
+    margin: 0;
+}
 header {
+    margin: 0;
+    border: 0;
 
 }
 section{
@@ -20,6 +28,9 @@ section{
    width: 500px;
    margin: auto;
    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.411);
+}
+div {
+    padding: 20px;
 }
 .button-start {
     background-color: rgb(67, 201, 211);
