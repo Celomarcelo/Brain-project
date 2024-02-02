@@ -17,13 +17,13 @@
             <img src="assets/images/android-chrome-512x512.png" alt="a picture of a brain">
         </div>
         <h1>Brain</h1>
-        <h3>Test your knowlegde</h3>
+        <h3>Test your knowledge.</h3>
     </header>
     <!--main section-->
     <section>
         <!--start game window-->
         <div  id="first-div" class="start">
-            <p>Hello, let's test your kwoledge?</p>
+            <p>Hello, let's test your knwoledge?</p>
             <p>But first, enter what you want to be called</p>
             <input type="text" id="username" name="username">
             <p>When you are ready, press <button id="start" value="submit" class="button-start" onclick="startGame()">Start</button> to begin.</p>
@@ -34,12 +34,12 @@
         <span id="display-question">Question</span>
             <hr>
         <p> Answer:
-            <input type="radio" id="true-option">
+            <input type="radio" id="true-option" value="true" name="options" checked>
             <label for="true-option">True</label>
-            <input type="radio" id="false-option">
+            <input type="radio" id="false-option" value="false" name="options" checked>
             <label for="false-option">False</label>
         </p>
-        <input type="button" value="submit" class="button">
+        <input type="button" value="submit" class="button" onclick="submitAnswer()">
         </div>
         <!--answer's part-->
         <div id="answer-place" class="hide">

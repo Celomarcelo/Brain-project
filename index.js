@@ -54,9 +54,26 @@ function startGame() {
     let divStart = document.getElementById('first-div');
     divStart.classList.add('hide');
     reveal.classList.remove('hide');
-    showQuestion()
+    showQuestion()  
 }
 function showQuestion() {
     var questionElement = document.getElementById("display-question");
     questionElement.innerHTML = questions[currentQuestion].question;
+}
+function submitAnswer() {
+    var userAnswer = document.querySelector('input[name="options"]:checked');
+    
+    if (userAnswer) {
+        if (userAnswer.value === questions[currentQuestion].answer) {
+            score++;
+        } else {
+            correctAnswer.classList.remove('hide');
+            correctAnswer.innerHTML =  questions[currentQuestion].correct;
+        }
+        currentQuestion++;
+        
+        if (currentQuestion < questions.length) {
+            showQuestion() 
+    } 
+}
 }
