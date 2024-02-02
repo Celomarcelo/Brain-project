@@ -58,7 +58,11 @@ function startGame() {
     showQuestion(); 
 }
 function showQuestion() {
+    document.getElementById('submit').classList.remove('hide');
+    document.getElementById('next-question').classList.add('hide');
+    correctAnswer.classList.add('hide');
     var questionElement = document.getElementById("display-question");
+    correctAnswer.innerHTML = '';
     questionElement.innerHTML = questions[currentQuestion].question;
 }
 function submitAnswer() {
@@ -74,7 +78,9 @@ function submitAnswer() {
         currentQuestion++;
         
         if (currentQuestion < questions.length) {
-            showQuestion();
+            document.getElementById('submit').classList.add('hide');
+            document.getElementById('next-question').classList.remove('hide');
+
     } 
 }
 }
