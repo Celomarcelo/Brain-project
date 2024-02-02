@@ -13,7 +13,7 @@
     <!--header section-->
     <header>
         <!--main image-->
-        <div>
+        <div id="img">
             <img src="assets/images/android-chrome-512x512.png" alt="a picture of a brain">
         </div>
         <h1>Brain</h1>
@@ -39,8 +39,9 @@
             <input type="radio" id="false-option" value="false" name="options" checked>
             <label for="false-option">False</label>
         </p>
-        <input type="button" value="submit" id="submit" class="button" onclick="submitAnswer()">
+        <input type="button" value="SUBMIT" id="submit" class="button" onclick="submitAnswer()">
         <input type="button" id="next-question" class="button hide" value="NEXT" onclick="showQuestion()">
+        <input type="button" id="finish" class="button hide" value="FINISH" onclick="showResult()">
         </div>
         <!--answer's part-->
         <div id="answer-place" class="hide">
