@@ -43,6 +43,7 @@ var questions = [
 var username;
 var currentQuestion = 0;
 var score = 0;
+var correctAnswer = document.getElementById('answer-place');
 function startGame() {
     document.getElementById("result").classList.add('hide');
     document.getElementById('restart').classList.add('hide');
@@ -54,7 +55,7 @@ function startGame() {
     let divStart = document.getElementById('first-div');
     divStart.classList.add('hide');
     reveal.classList.remove('hide');
-    showQuestion()  
+    showQuestion(); 
 }
 function showQuestion() {
     var questionElement = document.getElementById("display-question");
@@ -73,7 +74,7 @@ function submitAnswer() {
         currentQuestion++;
         
         if (currentQuestion < questions.length) {
-            showQuestion() 
+            showQuestion();
     } 
 }
 }
