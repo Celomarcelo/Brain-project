@@ -81,6 +81,9 @@ function submitAnswer() {
             document.getElementById('submit').classList.add('hide');
             document.getElementById('next-question').classList.remove('hide');
 
-    } 
+    } else {
+        document.getElementById('next-question').classList.add('hide');
+        document.getElementById('finish').classList.remove('hide');
+    }
 }
 }
