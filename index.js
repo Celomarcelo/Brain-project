@@ -1,3 +1,4 @@
+//questions 
 var questions = [
     {
         question : 'The 1998 world football championship was hosted in France, in which Brazil reached the final, winning 3-0' ,
@@ -44,6 +45,7 @@ var username;
 var currentQuestion = 0;
 var score = 0;
 var correctAnswer = document.getElementById('answer-place');
+//start game function
 function startGame() {
     document.getElementById("result").classList.add('hide');
     document.getElementById('restart').classList.add('hide');
@@ -83,7 +85,18 @@ function submitAnswer() {
 
     } else {
         document.getElementById('next-question').classList.add('hide');
+        document.getElementById('submit').classList.add('hide');
         document.getElementById('finish').classList.remove('hide');
     }
 }
+}
+//result and restart
+function showResult(){
+    correctAnswer.classList.add('hide');
+    document.getElementById('second-div').classList.add('hide');
+    document.getElementById('finish').classList.add('hide');
+    document.getElementById('result').classList.remove('hide');
+    var showScore = document.getElementById('result');
+    showScore.innerHTML = `${username}, you got ${score} of ${questions.length} questions.`
+    document.getElementById('restart').classList.remove('hide');
 }

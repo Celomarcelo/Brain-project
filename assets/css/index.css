@@ -1,4 +1,9 @@
+/* body style*/
 body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: blueviolet;
     font: normal 15pt arial;
     text-align: center;
@@ -15,6 +20,7 @@ img {
 h1 {
     margin: 0;
 }
+/*header style*/
 header {
     margin: 0;
     border: 0;
@@ -45,4 +51,19 @@ div {
     width: 100px;
     height: 50px;
     border-radius: 5PX;
+}
+/*media query small devices*/
+@media screen and (min-width: 200px) {
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.title{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+@media screen and (min-width: 820px){
+
 }
