@@ -1,16 +1,12 @@
 /* body style*/
 body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     background-color: blueviolet;
     font: normal 15pt arial;
     text-align: center;
     color: aliceblue;
-
 }
 img {
+    justify-content: center;
     height: 100px;
     width: 100px;
 }
@@ -53,17 +49,33 @@ div {
     border-radius: 5PX;
 }
 /*media query small devices*/
-@media screen and (min-width: 200px) {
-body{
+@media screen and (max-width: 600px) {
+body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
 }
 .title{
-    text-align: center;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
+ 
 }
-@media screen and (min-width: 820px){
-
+.game-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 30px;
+}
+.button-start{
+    width: 90px;
+    height: 30px;
+}
+.user {
+    height: 30px;
+    width: 200px;
+}
 }
