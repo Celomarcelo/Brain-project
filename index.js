@@ -1,4 +1,3 @@
-//questions 
 var questions = [
     {
         question: 'The 1998 world football championship was hosted in France, in which Brazil reached the final, winning 3-0',
@@ -42,11 +41,19 @@ var questions = [
     },
 ];
 let username;
-let currentQuestion = 0;
+let currentQuestion = [];
+let pastQuestions = [];
 let score = 0;
 let correctAnswer = document.getElementById('answer-place');
+//function generates random number
+function randomNumber() {
+    return Math.floor(Math.random() * questions.length);
+}
 //start game function
 function startGame() {
+    currentQuestion = [];
+    pastQuestions = [];
+    score = 0;
     document.getElementById("result").classList.add('hide');
     document.getElementById('restart').classList.add('hide');
     username = document.getElementById("username").value;
@@ -57,6 +64,9 @@ function startGame() {
     let divStart = document.getElementById('first-div');
     divStart.classList.add('hide');
     reveal.classList.remove('hide');
+    let randomNumber1 = randomNumber();
+    currentQuestion.push(randomNumber1);
+    pastQuestions.push(randomNumber1)
     showQuestion();
 }
 // show question funtion
@@ -70,8 +80,7 @@ function showQuestion() {
 }
 // submit and check questions funtion
 function submitAnswer() {
-    let userAnswer = document.querySelector('input[name="options"]:checked');
-
+    let userAnswer = document.querySelector('input[name="options"]:checked')
     if (userAnswer) {
         if (userAnswer.value === questions[currentQuestion].answer) {
             correctAnswer.classList.remove('hide');
@@ -83,17 +92,22 @@ function submitAnswer() {
             correctAnswer.style.color = "red";
             correctAnswer.innerHTML = "<strong>Incorrect!</strong>" + "<br>" + questions[currentQuestion].correct;
         }
-        currentQuestion++;
+        currentQuestion = [];
+        let newRandomNumber;
+        do {
+            newRandomNumber = randomNumber();
+        } while (pastQuestions.includes(newRandomNumber));
+        pastQuestions.push(newRandomNumber);
+        currentQuestion = newRandomNumber;
+    }
+    if (pastQuestions.length < questions.length) {
+        document.getElementById('submit').classList.add('hide');
+        document.getElementById('next-question').classList.remove('hide');
 
-        if (currentQuestion < questions.length) {
-            document.getElementById('submit').classList.add('hide');
-            document.getElementById('next-question').classList.remove('hide');
-
-        } else {
-            document.getElementById('next-question').classList.add('hide');
-            document.getElementById('submit').classList.add('hide');
-            document.getElementById('finish').classList.remove('hide');
-        }
+    } else {
+        document.getElementById('next-question').classList.add('hide');
+        document.getElementById('submit').classList.add('hide');
+        document.getElementById('finish').classList.remove('hide');
     }
 }
 //result and restart
@@ -105,5 +119,4 @@ function showResult() {
     const showScore = document.getElementById('result');
     showScore.innerHTML = `${username}, you got ${score} of ${questions.length} questions.`
     document.getElementById('restart').classList.remove('hide');
-    currentQuestion = 0;
 }
