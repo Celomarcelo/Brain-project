@@ -21,7 +21,6 @@
     </header>
     <!--main section-->
     <section class="game-section">
-        <h2></h2>
         <!--start game window-->
         <div  id="first-div" class="start">
             <p>Hello, let's test your knwoledge?</p>
@@ -37,9 +36,9 @@
         <p> Answer:
             <br>
             <input type="radio" class="true-option" value="true" name="options" onclick="userChoice()">
-            <label for="radio" class="true-option">True</label>
+            <label  class="true-option">True</label>
             <input type="radio" class="false-option" value="false" name="options" onclick="userChoice()">
-            <label for="radio" class="false-option">False</label>
+            <label  class="false-option">False</label>
         </p>
         <input type="button" value="SUBMIT" id="submit" class="button" onclick="check()">
         <input type="button" id="next-question" class="button hide" value="NEXT" onclick="showQuestion(); showOptions();">
