@@ -41,7 +41,7 @@ let questions = [
     },
 ];
 let username;
-let currentQuestion = [];
+let currentQuestion;
 let pastQuestions = [];
 let score = 0;
 let userAnswer;
@@ -55,7 +55,7 @@ function randomNumber() {
 }
 //start game function
 function startGame() {
-    currentQuestion = [];
+    currentQuestion;
     pastQuestions = [];
     score = 0;
     document.getElementById("result").classList.add('hide');
@@ -68,9 +68,8 @@ function startGame() {
     let divStart = document.getElementById('first-div');
     divStart.classList.add('hide');
     reveal.classList.remove('hide');
-    let randomNumber1 = randomNumber();
-    currentQuestion.push(randomNumber1);
-    pastQuestions.push(randomNumber1)
+    currentQuestion = randomNumber();
+    pastQuestions.push(currentQuestion)
     showQuestion();
 }
 // show question funtion
@@ -123,23 +122,22 @@ function submitAnswer() {
             correctAnswer.style.color = "red";
             correctAnswer.innerHTML = "<strong>Incorrect!</strong>" + "<br>" + questions[currentQuestion].correct;
         }
-        currentQuestion = [];
-        let newRandomNumber;
-        do {
-            newRandomNumber = randomNumber();
-        } while (pastQuestions.includes(newRandomNumber));
-        pastQuestions.push(newRandomNumber);
-        currentQuestion = newRandomNumber;
     }
     if (pastQuestions.length < questions.length) {
         document.getElementById('submit').classList.add('hide');
         document.getElementById('next-question').classList.remove('hide');
+        currentQuestion;
+        do {
+            currentQuestion = randomNumber();
+        } while (pastQuestions.includes(currentQuestion));
+        pastQuestions.push(currentQuestion);
 
-    } else {
+    } else if (pastQuestions.length = questions.length) {
         document.getElementById('next-question').classList.add('hide');
         document.getElementById('submit').classList.add('hide');
         document.getElementById('finish').classList.remove('hide');
     }
+
 }
 function showOptions() {
     trueOptions.forEach(function (showTrue) {
