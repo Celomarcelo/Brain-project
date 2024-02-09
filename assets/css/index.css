@@ -28,7 +28,7 @@ header {
 }
 
 /*section style*/
-section {
+.section {
     color: black;
     background: aliceblue;
     border-radius: 10px;
