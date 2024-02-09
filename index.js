@@ -1,4 +1,4 @@
-var questions = [
+let questions = [
     {
         question: 'The 1998 world football championship was hosted in France, in which Brazil reached the final, winning 3-0',
         answer: "false",
@@ -44,10 +44,14 @@ let username;
 let currentQuestion = [];
 let pastQuestions = [];
 let score = 0;
+let userAnswer;
 let correctAnswer = document.getElementById('answer-place');
+let trueOptions = document.getElementsByClassName("true-option");
+let falseOptions = document.getElementsByClassName("false-option");
+let sumNum = questions.length + 1;
 //function generates random number
 function randomNumber() {
-    return Math.floor(Math.random() * questions.length);
+    return Math.floor(Math.random() * sumNum);
 }
 //start game function
 function startGame() {
@@ -78,11 +82,38 @@ function showQuestion() {
     correctAnswer.innerHTML = '';
     questionElement.innerHTML = questions[currentQuestion].question;
 }
+//check which option is selected and delete the other
+function userChoice() {
+    trueOptions = Array.from(trueOptions);
+    falseOptions = Array.from(falseOptions);
+    trueOptions.forEach(function (hideFalse) {
+        if (hideFalse.checked) {
+            userAnswer = 'true';
+            falseOptions.forEach(function (falseOption) {
+                falseOption.classList.add('hide');
+            });
+        }
+    });
+    falseOptions.forEach(function (hideTrue) {
+        if (hideTrue.checked) {
+            userAnswer = "false";
+            trueOptions.forEach(function (trueOption) {
+                trueOption.classList.add('hide');
+            });
+        }
+    });
+}
 // submit and check questions funtion
+function check() {
+    if (!userAnswer) {
+        alert('Please, choose an answer');
+        return;
+    }
+    submitAnswer();
+}
 function submitAnswer() {
-    let userAnswer = document.querySelector('input[name="options"]:checked')
     if (userAnswer) {
-        if (userAnswer.value === questions[currentQuestion].answer) {
+        if (userAnswer === questions[currentQuestion].answer) {
             correctAnswer.classList.remove('hide');
             correctAnswer.innerHTML = '<strong>Correct!</strong>';
             correctAnswer.style.color = "green";
@@ -100,7 +131,7 @@ function submitAnswer() {
         pastQuestions.push(newRandomNumber);
         currentQuestion = newRandomNumber;
     }
-    if (pastQuestions.length < questions.length) {
+    if (pastQuestions.length < sumNum) {
         document.getElementById('submit').classList.add('hide');
         document.getElementById('next-question').classList.remove('hide');
 
@@ -109,6 +140,17 @@ function submitAnswer() {
         document.getElementById('submit').classList.add('hide');
         document.getElementById('finish').classList.remove('hide');
     }
+}
+function showOptions() {
+    trueOptions.forEach(function (showTrue) {
+        showTrue.classList.remove('hide');
+        showTrue.checked = false;
+    });
+    falseOptions.forEach(function (showFalse) {
+        showFalse.classList.remove('hide');
+        showFalse.checked = false;
+    });
+    userAnswer = '';
 }
 //result and restart
 function showResult() {
