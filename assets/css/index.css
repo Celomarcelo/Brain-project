@@ -53,6 +53,12 @@ section {
     height: 3em;
     border-radius: 5PX;
 }
+#answer-place {
+    margin: 1em;
+}
+#restart{
+    margin: 2em;
+}
 
 /*media query small devices*/
 @media only screen and (max-width: 600px) {
