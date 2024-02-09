@@ -34,13 +34,13 @@
         <span id="display-question">Question</span>
             <hr>
         <p> Answer:
-            <input type="radio" id="true-option" value="true" name="options" checked>
-            <label for="true-option">True</label>
-            <input type="radio" id="false-option" value="false" name="options" checked>
-            <label for="false-option">False</label>
+            <input type="radio" class="true-option" value="true" name="options" onclick="userChoice()">
+            <label for="true-option" class="true-option">True</label>
+            <input type="radio" class="false-option" value="false" name="options" onclick="userChoice()">
+            <label for="false-option" class="false-option">False</label>
         </p>
-        <input type="button" value="SUBMIT" id="submit" class="button" onclick="submitAnswer()">
-        <input type="button" id="next-question" class="button hide" value="NEXT" onclick="showQuestion()">
+        <input type="button" value="SUBMIT" id="submit" class="button" onclick="check()">
+        <input type="button" id="next-question" class="button hide" value="NEXT" onclick="showQuestion(); showOptions();">
         <input type="button" id="finish" class="button hide" value="FINISH" onclick="showResult()">
         </div>
         <!--answer's part-->
@@ -52,7 +52,7 @@
             result
         </div>
         <div id="restart" class="hide">
-            <input type="button"  value="RESTART"  class="button" onclick="startGame()">
+            <input type="button"  value="RESTART"  class="button" onclick="startGame(); showOptions();">
         </div>
    
 
