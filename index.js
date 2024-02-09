@@ -51,7 +51,7 @@ let falseOptions = document.getElementsByClassName("false-option");
 let sumNum = questions.length + 1;
 //function generates random number
 function randomNumber() {
-    return Math.floor(Math.random() * sumNum);
+    return Math.floor(Math.random() * questions.length);
 }
 //start game function
 function startGame() {
@@ -131,7 +131,7 @@ function submitAnswer() {
         pastQuestions.push(newRandomNumber);
         currentQuestion = newRandomNumber;
     }
-    if (pastQuestions.length < sumNum) {
+    if (pastQuestions.length < questions.length) {
         document.getElementById('submit').classList.add('hide');
         document.getElementById('next-question').classList.remove('hide');
 
