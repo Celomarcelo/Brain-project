@@ -1,7 +1,7 @@
 # Brain - Game
 ![brain-game](assets/images/android-chrome-192x192.png)
 
-[Github-Pages](https://celomarcelo.github.io/brain-project/)
+[Brain-Live Page](https://celomarcelo.github.io/brain-project/)
 
 The Brain game was created with the aim of testing the user's knowledge, bringing some different facts about history, events, music, etc..., and also awakening the user's curiosity towards the content shown.
 The game consists of a number of questions that can be either true or false, if false, the correct answer is shown.
@@ -16,6 +16,7 @@ At the end, the user receives a score.
 - __Name/nickname field__
 
  - Designated for the user to enter what they would like to be called, at the end of the game the entered value and the game score are displayed.
+   
 ![Name/nickname](assets/images/first-part.png)
 
 - __Questions and answers area.__
