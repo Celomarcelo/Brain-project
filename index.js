@@ -40,20 +40,31 @@ let questions = [
         correct: 'The sentence is correct.',
     },
 ];
-let username;
+let username = '';
 let currentQuestion;
 let pastQuestions = [];
 let score = 0;
 let userAnswer;
-let correctAnswer = document.getElementById('answer-place');
-let trueOptions = document.getElementsByClassName("true-option");
-let falseOptions = document.getElementsByClassName("false-option");
-let sumNum = questions.length + 1;
+const correctAnswer = document.getElementById('answer-place');
+const trueOptions = document.getElementsByClassName("true-option");
+const falseOptions = document.getElementsByClassName("false-option");
+let trueOptionsArray;
+let falseOptionsArray;
 //function generates random number
 function randomNumber() {
     return Math.floor(Math.random() * questions.length);
 }
-//start game function
+//check username value function
+function checkUser() {
+    username = document.getElementById("username").value;
+    if (!username) {
+        alert('Please, fill in the field with your user name.');
+        return;
+    }
+    username = document.getElementById("username").value;
+    startGame();
+}
+// start game function
 function startGame() {
     currentQuestion;
     pastQuestions = [];
@@ -64,8 +75,8 @@ function startGame() {
     if (username === '') {
         username = '"Unknown"'
     }
-    let reveal = document.querySelector('.hide');
-    let divStart = document.getElementById('first-div');
+    const reveal = document.querySelector('.hide');
+    const divStart = document.getElementById('first-div');
     divStart.classList.add('hide');
     reveal.classList.remove('hide');
     currentQuestion = randomNumber();
@@ -83,20 +94,20 @@ function showQuestion() {
 }
 //check which option is selected and delete the other
 function userChoice() {
-    trueOptions = Array.from(trueOptions);
-    falseOptions = Array.from(falseOptions);
-    trueOptions.forEach(function (hideFalse) {
+    trueOptionsArray = Array.from(trueOptions);
+    falseOptionsArray = Array.from(falseOptions);
+    trueOptionsArray.forEach(function (hideFalse) {
         if (hideFalse.checked) {
             userAnswer = 'true';
-            falseOptions.forEach(function (falseOption) {
+            falseOptionsArray.forEach(function (falseOption) {
                 falseOption.classList.add('hide');
             });
         }
     });
-    falseOptions.forEach(function (hideTrue) {
+    falseOptionsArray.forEach(function (hideTrue) {
         if (hideTrue.checked) {
             userAnswer = "false";
-            trueOptions.forEach(function (trueOption) {
+            trueOptionsArray.forEach(function (trueOption) {
                 trueOption.classList.add('hide');
             });
         }
@@ -132,19 +143,20 @@ function submitAnswer() {
         } while (pastQuestions.includes(currentQuestion));
         pastQuestions.push(currentQuestion);
 
-    } else if (pastQuestions.length = questions.length) {
+    } else {
         document.getElementById('next-question').classList.add('hide');
         document.getElementById('submit').classList.add('hide');
         document.getElementById('finish').classList.remove('hide');
     }
 
 }
+// function checks the user answer
 function showOptions() {
-    trueOptions.forEach(function (showTrue) {
+    trueOptionsArray.forEach(function (showTrue) {
         showTrue.classList.remove('hide');
         showTrue.checked = false;
     });
-    falseOptions.forEach(function (showFalse) {
+    falseOptionsArray.forEach(function (showFalse) {
         showFalse.classList.remove('hide');
         showFalse.checked = false;
     });
