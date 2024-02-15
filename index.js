@@ -66,21 +66,21 @@ function checkUser() {
 }
 // start game function
 function startGame() {
-    currentQuestion;
+    currentQuestion ='';
     pastQuestions = [];
     score = 0;
     document.getElementById("result").classList.add('hide');
     document.getElementById('restart').classList.add('hide');
     username = document.getElementById("username").value;
     if (username === '') {
-        username = '"Unknown"'
+        username = '"Unknown"';
     }
     const reveal = document.querySelector('.hide');
     const divStart = document.getElementById('first-div');
     divStart.classList.add('hide');
     reveal.classList.remove('hide');
     currentQuestion = randomNumber();
-    pastQuestions.push(currentQuestion)
+    pastQuestions.push(currentQuestion);
     showQuestion();
 }
 // show question funtion
@@ -137,7 +137,7 @@ function submitAnswer() {
     if (pastQuestions.length < questions.length) {
         document.getElementById('submit').classList.add('hide');
         document.getElementById('next-question').classList.remove('hide');
-        currentQuestion;
+        currentQuestion = '';
         do {
             currentQuestion = randomNumber();
         } while (pastQuestions.includes(currentQuestion));
@@ -169,6 +169,6 @@ function showResult() {
     document.getElementById('finish').classList.add('hide');
     document.getElementById('result').classList.remove('hide');
     const showScore = document.getElementById('result');
-    showScore.innerHTML = `${username}, you got ${score} of ${questions.length} questions.`
+    showScore.innerHTML = `${username}, you got ${score} of ${questions.length} questions.`;
     document.getElementById('restart').classList.remove('hide');
 }
