@@ -35,10 +35,10 @@
             <hr>
         <p> Answer:
             <br>
-            <input type="radio" class="true-option" value="true" name="options" onclick="userChoice()" aria-label="true option">
-            <label  class="true-option">True</label>
-            <input type="radio" class="false-option" value="false" name="options" onclick="userChoice()" aria-label="false option">
-            <label  class="false-option">False</label>
+            <input type="radio" class="true-option" id="true" value="true" name="options" onclick="userChoice()" aria-label="true option">
+            <label for="true" class="true-option">True</label>
+            <input type="radio" class="false-option" id="false" value="false" name="options" onclick="userChoice()" aria-label="false option">
+            <label for="false" class="false-option">False</label>
         </p>
         <input type="button" value="SUBMIT" id="submit" class="button" onclick="check()" aria-label="button to submit the answer">
         <input type="button" id="next-question" class="button hide" value="NEXT" onclick="showQuestion(); showOptions();" aria-label="button for next question">
