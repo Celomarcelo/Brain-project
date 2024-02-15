@@ -19,6 +19,10 @@ At the end, the user receives a score.
    
 ![Name/nickname](assets/images/first-part.png)
 
+- If there is no text, the page displays a message.
+
+![Name/nickname/no value](assets/images/notextvalue.png)
+
 - __Questions and answers area.__
 
   - The second part of the game shows the current question, the answer and submission options
@@ -42,6 +46,17 @@ At the end, the user receives a score.
 - Questions according to subjects.
 - User score history
 
+## Technologies used
+
+- VS Code
+- GitHub
+- GitHub Desktop
+- Node JS
+- JavaScript
+- HTML 5
+- CSS 3
+
+
 ## Testing 
 
 ### Validator Testing 
@@ -58,6 +73,11 @@ At the end, the user receives a score.
 [(Jigsaw) validator](https://jigsaw.w3.org)
 
 ![(Jigsaw) validator](assets/images/css-validator.png)
+
+- JavaScript
+  - JSHint is showing 5 unused variables but these variables are being called through "onclick" in the HTML document.
+
+![(JSHint) validator](assets/images/jshint.png)
    
 ### Check List
 - A feature checklist was created to ensure all testing.
@@ -66,6 +86,7 @@ At the end, the user receives a score.
 |-----------------|---------------------------|---------- |
 | load page       | right layout              | pass      |
 | text box        | receive value             | pass      |
+| no text value   | show message              | pass      |
 | question space  | display quest.            | pass      |
 | answer place    | display options           | pass      |
 | true option     | receive value             | pass      |
@@ -78,7 +99,6 @@ At the end, the user receives a score.
 |Functions checked for all questions         || pass      |
 |finish           | goes to result            | pass      |
 |show user name   | display username value    | pass      |
-|if there is no   | display "Unknwon"         | pass      |
 |restart button   | restart game, reset values| pass      |
 
 ### Lighthouse tests was carried out to ensure performance
