@@ -172,3 +172,5 @@ document.getElementById('next-question').addEventListener('click', function() {
     showOptions();
 });
 document.getElementById('finish').addEventListener('click', showResult);
+document.getElementById('true').addEventListener('click', userChoice);
+document.getElementById('false').addEventListener('click', userChoice);
