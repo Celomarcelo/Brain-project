@@ -171,3 +171,4 @@ document.getElementById('next-question').addEventListener('click', function() {
     showQuestion();
     showOptions();
 });
+document.getElementById('finish').addEventListener('click', showResult);
