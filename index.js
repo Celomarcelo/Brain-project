@@ -172,3 +172,9 @@ function showResult() {
     showScore.innerHTML = `${username}, you got ${score} of ${questions.length} questions.`;
     document.getElementById('restart').classList.remove('hide');
 }
+document.getElementById('start').addEventListener('click', startGame);
+document.getElementById('submit').addEventListener('click', check);
+document.getElementById('next-question').addEventListener('click', function() {
+    showQuestion();
+    showOptions();
+});
