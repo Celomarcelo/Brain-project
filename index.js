@@ -54,23 +54,16 @@ let falseOptionsArray;
 function randomNumber() {
     return Math.floor(Math.random() * questions.length);
 }
-//check username value function
-function checkUser() {
+// start game function
+function startGame() {
     username = document.getElementById("username").value;
     if (!username) {
         alert('Please, fill in the field with your user name.');
         return;
     }
-    username = document.getElementById("username").value;
-    startGame();
-}
-// start game function
-function startGame() {
     currentQuestion ='';
     pastQuestions = [];
     score = 0;
-    document.getElementById("result").classList.add('hide');
-    document.getElementById('restart').classList.add('hide');
     username = document.getElementById("username").value;
     if (username === '') {
         username = '"Unknown"';
