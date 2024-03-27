@@ -26,7 +26,7 @@
             <p>Hello, let's test your knwoledge?</p>
             <p>But first, enter what you want to be called</p>
             <input type="text" id="username" name="username" class="user" aria-label="text field designated for user name">
-            <p>When you are ready, press <button id="start" value="submit" class="button-start" onclick="checkUser()" aria-label="button to start the game">Start</button> to begin.</p>
+            <p>When you are ready, press <button id="start" value="submit" class="button-start" aria-label="button to start the game">Start</button> to begin.</p>
         </div>
         <!--questionnaire's part-->
         <div id="second-div" class="hide">Question:
@@ -40,9 +40,9 @@
             <input type="radio" class="false-option" id="false" value="false" name="options" onclick="userChoice()" aria-label="false option">
             <label for="false" class="false-option">False</label>
         </p>
-        <input type="button" value="SUBMIT" id="submit" class="button" onclick="check()" aria-label="button to submit the answer">
-        <input type="button" id="next-question" class="button hide" value="NEXT" onclick="showQuestion(); showOptions();" aria-label="button for next question">
-        <input type="button" id="finish" class="button hide" value="FINISH" onclick="showResult()" aria-label="button to finish and show the result">
+        <input type="button" value="SUBMIT" id="submit" class="button" aria-label="button to submit the answer">
+        <input type="button" id="next-question" class="button hide" value="NEXT" aria-label="button for next question">
+        <input type="button" id="finish" class="button hide" value="FINISH" aria-label="button to finish and show the result">
         </div>
         <!--answer's part-->
         <div id="answer-place" class="hide">
@@ -53,7 +53,7 @@
             result
         </div>
         <div id="restart" class="hide">
-            <input type="button"  value="RESTART"  class="button" onclick="startGame(); showOptions();" aria-label="button to restart the game">
+            <input type="button"  value="RESTART"  class="button" aria-label="button to restart the game">
         </div>
    
 
