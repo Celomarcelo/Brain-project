@@ -48,6 +48,7 @@ let userAnswer;
 const correctAnswer = document.getElementById('answer-place');
 const trueOptions = document.getElementsByClassName("true-option");
 const falseOptions = document.getElementsByClassName("false-option");
+const divStart = document.getElementById('first-div');
 let trueOptionsArray;
 let falseOptionsArray;
 //function generates random number
@@ -69,7 +70,6 @@ function startGame() {
         username = '"Unknown"';
     }
     const reveal = document.querySelector('.hide');
-    const divStart = document.getElementById('first-div');
     divStart.classList.add('hide');
     reveal.classList.remove('hide');
     currentQuestion = randomNumber();
@@ -171,13 +171,18 @@ function restartGame() {
     document.getElementById('restart').classList.add('hide');
     divStart.classList.remove('hide');
 }
-document.getElementById('start').addEventListener('click', startGame);
+document.getElementById('start').addEventListener('click', function() {
+    startGame();
+    showOptions();
+});
 document.getElementById('submit').addEventListener('click', check);
 document.getElementById('next-question').addEventListener('click', function() {
     showQuestion();
     showOptions();
 });
 document.getElementById('finish').addEventListener('click', showResult);
+document.getElementById('restart-game').addEventListener('click', function() {
+    restartGame();
+});
 document.getElementById('true').addEventListener('click', userChoice);
 document.getElementById('false').addEventListener('click', userChoice);
-document.getElementById('restart-game').addEventListener('click', restartGame);
