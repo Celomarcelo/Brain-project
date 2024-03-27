@@ -75,7 +75,6 @@ At the end, the user receives a score.
 ![(Jigsaw) validator](assets/images/css-validator.png)
 
 - JavaScript
-  - JSHint is showing 5 unused variables but these variables are being called through "onclick" in the HTML document.
 
 ![(JSHint) validator](assets/images/jshint.png)
    
