@@ -40,7 +40,7 @@ let questions = [
         correct: 'The sentence is correct.',
     },
 ];
-let username = '';
+let username;
 let currentQuestion;
 let pastQuestions = [];
 let score = 0;
@@ -165,6 +165,12 @@ function showResult() {
     showScore.innerHTML = `${username}, you got ${score} of ${questions.length} questions.`;
     document.getElementById('restart').classList.remove('hide');
 }
+// restart the game 
+function restartGame() {
+    document.getElementById('result').classList.add('hide');
+    document.getElementById('restart').classList.add('hide');
+    divStart.classList.remove('hide');
+}
 document.getElementById('start').addEventListener('click', startGame);
 document.getElementById('submit').addEventListener('click', check);
 document.getElementById('next-question').addEventListener('click', function() {
@@ -174,3 +180,4 @@ document.getElementById('next-question').addEventListener('click', function() {
 document.getElementById('finish').addEventListener('click', showResult);
 document.getElementById('true').addEventListener('click', userChoice);
 document.getElementById('false').addEventListener('click', userChoice);
+document.getElementById('restart-game').addEventListener('click', restartGame);
